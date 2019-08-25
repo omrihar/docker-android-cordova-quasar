@@ -8,7 +8,7 @@ RUN apt-get update -qq
 # ------------------------------------------------------
 # --- Cordova CLI
 
-RUN npm install -g cordova
+RUN yarn global add cordova
 RUN cordova -v
 
 # ------------------------------------------------------
@@ -16,6 +16,12 @@ RUN cordova -v
 
 RUN apt-get install -y ant
 RUN ant -version
+
+
+# ------------------------------------------------------
+# --- Install Quasar
+RUN yarn global add @quasar/cli
+RUN quasar -v
 
 # ------------------------------------------------------
 # --- Cleanup and rev num
